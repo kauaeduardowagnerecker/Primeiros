@@ -9,13 +9,14 @@
 
 <body>
     <header>
-    <h1>O que são servidores?</h1>
+    <h1><strong>O que são servidores?</strong></h1>
     <hr>
 
     <h2>Tópicos</h2>
     <ul>
         <li><a href="#def">Definição de servidor</a></li>
         <li><a href="#func">Funcionamento de um servidor</a></li>
+        <li><a href="hospedando">Hospedando servidores</a></li>
         <li><a href="#servidores">Servidores web</a></li>
         <li><a href="#dns">Servidores DNS</a></li>
         <li><a href="#proxy">Servidores Proxy</a></li>
@@ -25,28 +26,79 @@
     </header>
 
     <section id="def">
-        <h3>Definição de servidor</h3>
-        <p>No contexto das redes de computadores, os servidores ''servem'' os usuários 
+        <h3><u>Definição de servidor</u></h3>
+        <p>No contexto das redes de computadores, os servidores (ou <i>servers</i>) ''servem'' os usuários 
             (também chamados de clientes) com informações requisitadas através de protocolos 
-            variados (HTTP, FTP...). Por exemplo, poderíamos como clientes de um aplicativo 
-            bancário requisitar de um servidor o saldo de nossa conta bancária, que seria 
+            variados (<abbr>HTTP</abbr><sup><a href="https://pt.wikipedia.org/wiki/Hypertext_Transfer_Protocol" target="_blank"">1</a></sup> (Hypertext Transfer Protocol), 
+            <abbr>FTP</abbr><sup><a href="https://pt.wikipedia.org/wiki/Protocolo_de_Transfer%C3%AAncia_de_Arquivos">2</a></sup> (File Transfer Protocol), ...). 
+            Por exemplo, poderíamos como clientes de um aplicativo 
+            bancário <mark>requisitar</mark> de um servidor o saldo de nossa conta bancária, que seria 
             retornado para nós caso nossa solicitação fosse validada (através de senhas, por 
             exemplo).</p>
         <p>Essa separação (chamada de modelo cliente-servidor) é vantajosa pois permite 
-            uma melhor performance e maior especialização em ambos os lados da solicitação e, 
-            além disso, maior segurança, pois isola os elementos que cada usuário deve ter acesso. 
+            uma melhor <mark>performance</mark> e maior especialização em ambos os lados da solicitação e, 
+            além disso, maior <mark>segurança</mark>, pois isola os elementos que cada usuário deve ter acesso. 
             Claramente, não devemos ter acesso a informação do saldo bancário de outros 
             clientes; portanto, elas ficam armazenadas em um servidor que decide quem pode a
             acessar através de autenticação e validação. Caso essa informação estivesse 
             em cada computador de cliente, seria facilmente acessível por truques de leitura 
-            de memória.
+            de memória. Tendo isso em mente, a importância dos servidores é clara; e, para fins de ilustração, 
+            segue uma citação interessante sobre eles:
         </p> 
+        <blockquote>
+            "Servers don’t sleep; they’re the unsung heroes of the internet, ensuring data flows around the clock."
+        </blockquote>
     </section>
-    
+
     <hr>
 
     <section id="func">
-        
+        <h3><u>Funcionamento de um servidor</u></h3>
+        <p>A característica principal de um servidor é aguardar a <mark>solicitação</mark> de um cliente,
+            atendendo a ela (caso seja considerada válida) e retornando para ele as informações
+            desejadas. Para interagir com os clientes, é necessário uma interface de usuário que possa
+            enviar a solicitação e de uma rede de comunicação existente entre o cliente e o servidor 
+            (geralmente a <mark>Internet</mark>). 
+        </p>
+        <p>Para que os servidores possam processar essas solicitações, utiliza-se software como
+            <mark>Apache</mark>, <mark>nginx</mark> ou outros especializados em diferentes protocolos. Esse software processa
+            as solicitações (no caso de Apache, solicitações <abbr>HTTP</abbr>) e instrui ao resto do
+            servidor o que fazer, de acordo com as aplicações instaladas nele. Por exemplo, o Apache poderia
+            processar uma solicitação <abbr>HTTP</abbr> requisitando dados bancários do cliente XY e, através disso,
+            enviar uma mensagem para que o servidor retire do banco de dados da aplicação essa informação.
+        </p>
+        <p>Quanto a sistema operacional, podem-se usar vários diferentes como <mark>Linux</mark> (Fedora, CentOS, 
+            Ubuntu...), <mark>Windows Server</mark>, <mark>FreeBSD</mark>, entre outros. O hardware depende nas necessidades da aplicação, 
+            por exemplo, uma aplicação que necessita de grandes cálculos complexos a cada solicitação necessita 
+            de um hardware muito mais potente que um simples aplicativo de blog.
+        </p>
+    </section>
+
+    <hr>
+
+    <section id="hospedando">
+        <h3><u>Hospedando servidores</u></h3>
+        <p>Para <mark>hospedar</mark> um servidor, pode-se fazer por conta própria através da montagem
+            por conta própria dos seus componentes de hardware e software (<mark>self-hosting</mark>) ou, de uma maneira mais prática,
+            contratar uma empresa para que esta realize a hospedagem para você, com diversos benefícios possíveis como 
+            ser multiplataforma, vir com o registro de domínio de forma conjunta, etc. 
+        </p>
+        <p>Todo website vai necessitar de um <mark>nome de domínio</mark>, que deve ser registrado no local
+            correto (Registro BR para sites .br), que deve ser pago anualmente e será mapeado para um endereço 
+            IP fornecido pelo seu serviço de hospedagem ou por você mesmo, caso realize self-hosting.
+        </p>
+    </section>
+
+    <hr>
+
+    <section id="servidores">
+        <p>Agora, veremos alguns exemplos de servidores. O primeiro deles é o <mark>servidor web</mark>, 
+            que hospeda os websites que você acessa diariamente. Este é responsável por, ao ser 
+            solicitado pelo cliente o website através do seu nome de domínio (que, por vez, é mapeado 
+            para um endereço IP), retornar arquivos HTML, CSS e JavaScript para serem executados pelo 
+            navegador e permitir o acesso ao website. Eles também gerenciam as informações que o website 
+            necessita para funcionar, comunicando-se com um <mark>banco de dados</mark>.
+        </p>
     </section>
 </body>
 
