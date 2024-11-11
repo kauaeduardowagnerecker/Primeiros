@@ -18,9 +18,8 @@
         <li><a href="#func">Funcionamento de um servidor</a></li>
         <li><a href="hospedando">Hospedando servidores</a></li>
         <li><a href="#servidores">Servidores web</a></li>
-        <li><a href="#dns">Servidores DNS</a></li>
         <li><a href="#proxy">Servidores Proxy</a></li>
-        <li><a href="#protocolos">Protocolos de Servidor</a></li>
+        <li><a href="#http">Solicitações HTTP</a></li>
     </ul>
     <hr>
     </header>
@@ -54,7 +53,7 @@
 
     <section id="func">
         <h3><u>Funcionamento de um servidor</u></h3>
-        <p>A característica principal de um servidor é aguardar a <mark>solicitação</mark> de um cliente,
+        <p>A característica principal de um servidor é aguardar a <mark>solicitação</mark><sub><a href="#nota1">1</a></sub></small> de um cliente,
             atendendo a ela (caso seja considerada válida) e retornando para ele as informações
             desejadas. Para interagir com os clientes, é necessário uma interface de usuário que possa
             enviar a solicitação e de uma rede de comunicação existente entre o cliente e o servidor 
@@ -92,6 +91,7 @@
     <hr>
 
     <section id="servidores">
+        <h3><u>Servidores Web</u></h3>
         <p>Agora, veremos alguns exemplos de servidores. O primeiro deles é o <mark>servidor web</mark>, 
             que hospeda os websites que você acessa diariamente. Este é responsável por, ao ser 
             solicitado pelo cliente o website através do seu nome de domínio (que, por vez, é mapeado 
@@ -100,6 +100,45 @@
             necessita para funcionar, comunicando-se com um <mark>banco de dados</mark>.
         </p>
     </section>
+
+    <hr>
+
+    <section id="proxy">
+        <h3>Servidores Proxy</h3>
+        <p>Servidores proxy são servidores de segurança, responsáveis por isolar certos websites de determinados clientes. 
+            Por exemplo, caso queiramos restringir os funcionários de uma empresa a acessar somente websites 100% confiáveis (
+                e, portanto, evitar a infecção dos sistemas por malware), podemos criar um servidor proxy localizado entre o cliente 
+                e a internet que ''media'' a interação entre eles, apenas permitindo o envio de solicitações HTTP para endereços 
+                previamente permitidos pelos administradores.
+        </p>
+    </section>
+
+    <hr>
+
+    <section id="http">
+        <h3><u>Solicitações HTTP</u></h3>
+        <p>HTTP é nada mais nada menos que uma abreviação para <i>Hypertext Transfer Protocol</i>, ou seja, 
+        o protocolo de envio de informações de hipertexto (como os arquivos HTML) através de uma rede em direção a 
+        determinado cliente. O processo inicia com uma conexão TCP<sub><a href="#nota1">1</a></sub> que garante 
+        a integridade dos dados enviados. Posteriormente, envia-se uma requisição HTTP que possui um método, 
+        que descreve de forma geral a ação realizada, principalmente dentre 4 opções:
+        <ol>
+            <li>GET - Retira informações do servidor</li>
+            <li>POST - Envia dados ao servidor para serem processados</li>
+            <li>PUT - Atualiza informações enviando novos dados ao servidor para processamento</li>
+            <li>DELETE - Exclui determinadas informações do servidor</li>
+        </ol>
+        Para mais detalhes, refira-se a <a href="https://pt.wikipedia.org/wiki/Hypertext_Transfer_Protocol#GET">HTTP</a>.
+        </p>
+    </section>
+
+    <hr>
+
+    <footer>
+        <small id="nota1">1-O processo de solicitação é complexo e é recomendado ter um bom entendimento de todos seus detalhes.
+            Para mais informações, consulte <a href="https://pt.wikipedia.org/wiki/TCP/IP">TCP/IP</a>.
+        </small>
+    </footer>
 </body>
 
 </html>
